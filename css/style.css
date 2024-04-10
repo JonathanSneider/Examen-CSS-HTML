@@ -12,6 +12,7 @@ body {
 
 .section__text__button__imgfrape{
     display: flex;
+    opacity: 100%;
 }
 .div__image__frape {
     display: flex;
@@ -31,6 +32,7 @@ body {
     top: 2%;
     right: 81%;
     z-index: 2;
+
 }
 .div__image__frape :nth-child(2) {
     width: 36%;
@@ -38,7 +40,6 @@ body {
     right: 7%;
     top: 21%;
     z-index: 3;
-
 }
 .div__image__frape :nth-child(3) {
     width: 23%;
@@ -46,7 +47,10 @@ body {
     top: 3%;
     right: 12%;
     z-index: 4;
-
+    transition: top, 2s;
+}
+.div__image__frape :nth-child(3):hover {
+    top: 5%;
 }
 .div__text__button{
     margin-top: 5%;
@@ -80,7 +84,12 @@ button{
     animation-duration: 4s;
     animation-timing-function: 3s;
     animation-delay: 0s;
-    animation-direction: alternate;
+    animation: button__animation 9s linear infinite;
+    transition: color 3s;
+
+  }
+  button:hover {
+    color: blue;
   }
 
   .div__tarjets {
@@ -96,7 +105,11 @@ button{
     width: 27%;
     border-radius: 4vw;
     margin-right: 5%;
+    transition: width 2s;
   }
+.div__tarjets>div:hover {
+    width: 29%;
+}
   .div__tarjets>div h1{
     font-size: 1.8vw;
     margin-top: 5%;
@@ -115,22 +128,40 @@ button{
     width: 33.6%;
     height: 100%;
 }
-@media screen and (orientation: portrait) {
+
+@keyframes button__animation {
+    10% {
+        transform: translateX(9%);
+    }
+    50% {
+        transform: translateY(2%);
+    }
+    100% {
+        transform: translateX(8%);
+    }
+
+}
+
+
+@media screen and (max-width: 730px) {
+    .div__tarjets>div:hover {
+        width: 95%;
+    }
     .div__text__button{
         text-align: center;
         width: 100%;
         margin-top: 0;
         margin-left: 0;
         z-index: 6;
-        margin-top: 30%;
+        margin-top: 4%;
     }
     .div__text__button h1 {
-        font-size: 9vw;
-        margin-top: 22%;
+        font-size: 6.5vw;
+        margin-top: 19%;
         
     }
     .div__text__button p {
-        font-size: 4.4vw;
+        font-size: 3.9vw;
         white-space: pre-line;
     }
     button {
@@ -147,14 +178,96 @@ button{
         border-bottom-left-radius: 8vw;
     }
     .div__tarjets>div h1{
-        font-size: 4.8vw;
+        font-size: 3.8vw;
+        height: 1%;
+        width: 0%;
+        
+      }
+      .div__tarjets>div img{
+        width: 25%;
+        
+      }
+      .div__tarjets>div p {
+        font-size: 2.1vw;
+        margin-top: 10%;
+      }
+    .div__image__frape :nth-child(4) {
+        width: 64%;
+        max-height: 77%;
+        position: absolute;
+        right: 0%;
+        top: 0%;
+        z-index: -4;
+    }
+    .div__image__frape :nth-child(1) {
+        width: 25%;
+        position: absolute;
+        top: 14%;
+        right: 70%;
+        z-index: 2;
+    }
+    .div__image__frape :nth-child(2) {
+        width: 56%;
+        position: absolute;
+        right: 6%;
+        top: 11%;
+        z-index: 3;
+
+    }
+    .div__image__frape :nth-child(3) {
+        width: 35%;
+        position: absolute;
+        top: 2%;
+        right: 15%;
+        z-index: 4;
+
+    }
+}
+
+@media screen and (max-width: 517px)  {
+    .div__text__button{
+        text-align: center;
+        width: 100%;
+        margin-top: 0;
+        margin-left: 0;
+        z-index: 6;
+        margin-top: 30%;
+    }
+    .div__text__button h1 {
+        font-size: 9vw;
+        margin-top: 18%;
+        
+    }
+    .div__text__button p {
+        font-size: 4.4vw;
+        white-space: pre-line;
+    }
+    button {
+        font-size: 3.3vw;
+    }
+    .div__tarjets {
+        flex-direction: column;
+        margin-left: 0;
+        margin-right: 14%;
+    }
+    .div__tarjets>div {
+        width: 90%;
+        margin-bottom: 5%;
+        border-top-left-radius: 8vw;
+        border-bottom-left-radius: 8vw;
+    }
+    .div__tarjets>div h1{
+        font-size: 5.3vw;
         height: 1%;
         width: 0%;
         
       }
       .div__tarjets>div p {
-        font-size: 3vw;
+        font-size: 3.5vw;
         margin-top: 10%;
+      }
+      .div__tarjets>div img {
+        width: 29%;
       }
 
 .div__image__frape :nth-child(4) {
@@ -189,23 +302,6 @@ button{
 
 }
 }
-::view-transition {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-}
-@keyframes boton {
-    10% {
-        transform: rotate(20%);
-    }
-    50% {
-        transform: rotate(20%)
-    }
-    90% {
-        transform: rotate(20%);
-    }
-    100% {
-        transform: rotate(20%);
-    }
 
-}
+
 
